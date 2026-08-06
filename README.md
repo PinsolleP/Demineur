@@ -15,7 +15,8 @@ Plusieurs cas sont alors à prendre en compte, suivant le contenu de la case, po
 de la grille qui suit :
 
 • bombe : un message indique au joueur qu'il a perdu la partie, et dans la grille affichée, 
-toutes les cases contenant des bombes sont découvertes, puis le jeu s'arrête ; 
+toutes les cases contenant des bombes sont découvertes, puis le jeu s'arrête ;
+
 • vide : le nombre des bombes se trouvant dans les huit cases contiguës est affiché dans 
 la case alors découverte lors du nouvel affichage de la grille (0 peut être remplacé par 
 un vide) ; en outre, s'il s'agissait de la dernière case vide à découvrir, un message 
@@ -28,13 +29,17 @@ ajoutées :
 cases adjacentes, cette case, ainsi que toutes celles dans le même cas qui lui sont 
 directement ou indirectement reliées, seront découvertes ; puis, toutes les cases 
 directement reliées aux cases venant d'être découvertes le seront à leur tour (ces 
-dernières cases formant une frontière entourant les premières cases) ; 
+dernières cases formant une frontière entourant les premières cases) ;
+
 • le joueur peut indiquer, après avoir spécifié les coordonnées d'une case, l'action qu'il 
-souhaite voir réaliser sur celle-ci, parmi : 
-◦ la découvrir (même traitement précédemment décrit), 
+souhaite voir réaliser sur celle-ci, parmi :
+
+◦ la découvrir (même traitement précédemment décrit),
+
 ◦ indiquer qu'elle contient une bombe (il faudra alors indiquer à la fin de la partie, 
 que le joueur ait gagné ou pas, les bombes qui avaient été incorrectement 
-indiquées) ; 
+indiquées) ;
+ 
 • Proposer de faire varier les dimensions de la grille et de choisir parmi plusieurs niveaux 
 de difficultés (le nombre de bombes variant alors selon ces 2 paramètres). 
 
