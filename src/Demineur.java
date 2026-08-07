@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Demineur {
     public static int LINES = 6;
     public static int COLUMNS = 12;
@@ -45,13 +47,47 @@ public class Demineur {
 
     }
 
-    public static void plantedBomb(boolean bombGrid[][]){
-        
-    }
+    public static void placeBombs(){
+        int numberPlantedBomb = 0;
+        Random rand = new Random();
 
+        while (numberPlantedBomb < 9 ){
+            int randomline = rand.nextInt(LINES);
+            int randomColumns = rand.nextInt(COLUMNS);
+
+
+            if (!bombGrid[randomline][randomColumns]){
+                bombGrid[randomline][randomColumns] = true;
+                numberPlantedBomb += 1;
+                    }
+                }
+            }
+
+    public static void displayBomb(){
+        System.out.print("  ");
+        for ( int j = 0; j < COLUMNS; j ++){
+            System.out.print (j + " ");
+        }
+        System.out.println();
+
+        for ( int i = 0; i < LINES; i++){
+            System.out.print (i + " ");
+            for ( int j = 0; j < COLUMNS; j++){
+                if (bombGrid[i][j]) {
+                    System.out.print ("X ");
+                }
+                else{
+                    System.out.print ("¤ ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
 
     public static void main (String[]args){
         createGrid();
-        displayGrid();
+        placeBombs();
+        displayBomb();
             }
         }
