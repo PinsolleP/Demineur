@@ -63,31 +63,31 @@ public class Demineur {
                 }
             }
 
-    public static void displayBomb(){
-        System.out.print("  ");
-        for ( int j = 0; j < COLUMNS; j ++){
-            System.out.print (j + " ");
-        }
-        System.out.println();
+    public static void calculateBombCount(boolean bombGrid[][]) {
+        for (int i = 0; i < LINES; i++) {
+            for (int j = 0; j < COLUMNS; j++) {
+                int counter = 0;
+                for (int k = i - 1; k <= i + 1; k++) {
+                    for (int l = j - 1; l <= j + 1; l++) {
+                        if (k >= 0 && k < LINES && l >= 0 && l < COLUMNS) {
+                            if (bombGrid[k][l]) {
+                                if (k != i || l != j) {
+                                    counter ++;
+                                }
 
-        for ( int i = 0; i < LINES; i++){
-            System.out.print (i + " ");
-            for ( int j = 0; j < COLUMNS; j++){
-                if (bombGrid[i][j]) {
-                    System.out.print ("X ");
+                            }
+                        }
+                    }
                 }
-                else{
-                    System.out.print ("¤ ");
-                }
+                bombCount[i][j] = counter;
             }
-            System.out.println();
         }
-
     }
+
 
     public static void main (String[]args){
         createGrid();
         placeBombs();
-        displayBomb();
+        placeBombs();
             }
         }
